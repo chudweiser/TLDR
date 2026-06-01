@@ -95,10 +95,13 @@ function pullModel(onProgress) {
 
 function startTLDRServer() {
     const serverPath = path.join(__dirname, "server.js");
-    serverProcess = spawn(process.execPath, [serverPath], {
-        stdio: "ignore"
+    const nodeBin = IS_WIN ? "node.exe" : "node";
+    serverProcess = spawn(nodeBin, [serverPath], {
+        stdio: ["ignore", "pipe", "pipe"]
     });
-    serverProcess.unref();
+    serverProcess.stdout.on("data", (d) => console.log("[server]", d.toString().trim()));
+    serverProcess.stderr.on("data", (d) => console.error("[server]", d.toString().trim()));
+    serverProcess.on("exit", (code) => console.log("[server] exited with code", code));
 }
 
 function checkServerRunning() {
