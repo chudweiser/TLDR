@@ -1,0 +1,31 @@
+{
+  "name": "tldr-local-app",
+  "version": "1.0.0",
+  "description": "TLDR Local - AI paragraph summarizer tray app",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.tldr.local",
+    "productName": "TLDR Local",
+    "files": ["src/**/*"],
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

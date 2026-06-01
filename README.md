@@ -109,3 +109,39 @@ npm start
 
 **Wrong model error:**
 Make sure the model name in `server/server.js` matches exactly what `ollama list` shows.
+
+## Desktop App (Recommended)
+
+The `app/` folder contains an Electron app that handles everything automatically — starts Ollama, runs the server, and lives in your system tray.
+
+### Run from source
+
+```bash
+cd app
+npm install
+npm start
+```
+
+### First launch
+
+A setup wizard will:
+1. Detect if Ollama is installed (opens download page if not)
+2. Download the AI model if missing (~5 GB, one time)
+3. Start the background server
+4. Minimize to your system tray
+
+### Subsequent launches
+
+Skips the wizard and goes straight to the tray. Right-click the tray icon to check status or quit.
+
+### Build a distributable
+
+**Linux (.AppImage):**
+```bash
+npm run build:linux
+```
+
+**Windows (.exe installer):**
+```bash
+npm run build:win
+```
