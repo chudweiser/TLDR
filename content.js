@@ -77,11 +77,9 @@ chrome.storage.local.get(
                     } else {
 
                         const tldr = document.createElement("div");
-
-                        tldr.innerHTML =
-                        "<em>TL;DR: " +
-                        response.summary +
-                        "</em>";
+                        const em = document.createElement("em");
+                        em.textContent = "TL;DR: " + response.summary;
+                        tldr.appendChild(em);
 
                         tldr.style.marginTop = "8px";
                         tldr.style.padding = "4px";
