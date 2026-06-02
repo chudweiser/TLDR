@@ -64,7 +64,7 @@ Open PowerShell and run:
 cd path\to\TLDR\app
 Invoke-WebRequest -Uri "https://github.com/electron/electron/releases/download/v33.4.4/electron-v33.4.4-win32-x64.zip" -OutFile electron.zip
 Expand-Archive -Path electron.zip -DestinationPath electron-bin
-.\electron-bin\electron.exe main.js
+.\electron-bin\electron.exe .\app\main.js
 ```
 
 ### 4. Setup wizard
