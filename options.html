@@ -8,25 +8,16 @@
 <h1>TLDR Settings</h1>
 
 <label>
-Character Limit
-<input type="number" id="limit">
+    Character Limit (minimum paragraph length to summarize)
+    <br><br>
+    <input type="number" id="limit" min="100" max="5000" step="50">
 </label>
 
 <br><br>
 
-<label>
-Mode
-<select id="mode">
-<option value="annotate">Annotate</option>
-<option value="replace">Replace</option>
-</select>
-</label>
+<button id="save">Save</button>
 
-<br><br>
-
-<button id="save">
-Save
-</button>
+<p id="status" style="color:green;display:none">Saved! Reload any open tabs for changes to take effect.</p>
 
 <script src="options.js"></script>
 

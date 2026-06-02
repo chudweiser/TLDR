@@ -1,25 +1,13 @@
 const limit = document.getElementById("limit");
-const mode = document.getElementById("mode");
+const status = document.getElementById("status");
 
-chrome.storage.local.get(
-    {
-        limit: 500,
-        mode: "annotate"
-    },
-    data => {
+chrome.storage.local.get({ limit: 500 }, data => {
+    limit.value = data.limit;
+});
 
-        limit.value = data.limit;
-        mode.value = data.mode;
+document.getElementById("save").onclick = () => {
+    chrome.storage.local.set({ limit: Number(limit.value) }, () => {
+        status.style.display = "block";
+        setTimeout(() => status.style.display = "none", 3000);
     });
-
-document
-.getElementById("save")
-.onclick = () => {
-
-    chrome.storage.local.set({
-        limit: Number(limit.value),
-                            mode: mode.value
-    });
-
-    alert("Saved");
 };
