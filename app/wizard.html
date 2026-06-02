@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; script-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'">
 <title>TLDR Local Setup</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
@@ -235,8 +235,8 @@
   <div class="log" id="log"></div>
 
   <div class="actions">
-    <button class="btn-secondary" id="btn-secondary" style="display:none" onclick="secondaryAction()">Install Ollama</button>
-    <button class="btn-primary"   id="btn-primary"   disabled onclick="primaryAction()">
+    <button class="btn-secondary" id="btn-secondary" style="display:none">Install Ollama</button>
+    <button class="btn-primary"   id="btn-primary"   disabled>
       <span class="status-dot spin"></span> Checking…
     </button>
   </div>

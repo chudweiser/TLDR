@@ -3,6 +3,8 @@ const subtext    = document.getElementById("subtext");
 const btnPrimary = document.getElementById("btn-primary");
 const btnSec     = document.getElementById("btn-secondary");
 const log        = document.getElementById("log");
+btnPrimary.addEventListener("click", () => primaryAction());
+btnSec.addEventListener("click", () => secondaryAction());
 
 const s1 = document.getElementById("s1");
 const s2 = document.getElementById("s2");
