@@ -99,7 +99,7 @@ cd path\to\TLDR\app
 
 Open the extension options in Firefox (right-click the extension icon → Manage Extension → Preferences) to configure:
 
-- **Character limit** — minimum paragraph length to trigger summarization (default: 500). After changing, reload any open tabs.
+- **Character limit** — minimum paragraph length to trigger summarization (default: 500). After changing, reload any open tabs. | WIP, TO BE ADDED 6/3
 
 ## Troubleshooting
 
