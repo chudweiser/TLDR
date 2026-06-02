@@ -210,6 +210,7 @@ function createWizardWindow() {
     });
 
     wizardWindow.loadFile(path.join(__dirname, "wizard.html"));
+    wizardWindow.webContents.openDevTools({ mode: "detach" });
 }
 
 // ── IPC handlers (wizard → main) ──────────────────────────────────────────────
